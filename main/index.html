@@ -1,3 +1,31 @@
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Chặn F12
+    if (e.key === 'F12') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Chặn Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Chặn Ctrl+Shift+J
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Không chặn Ctrl+U — dòng này đã bị xóa
+  });
+
+  // Chặn chuột phải (nếu muốn bỏ chặn thì xóa khối này)
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+</script>
 
 <html lang="en"><head><script src="chrome-extension://infdcenbdoibcacogknkjleclhnjdmfh/content/captcha/recaptcha/hunter.js"></script><script src="chrome-extension://infdcenbdoibcacogknkjleclhnjdmfh/content/captcha/recaptcha/interceptor.js"></script><script src="chrome-extension://infdcenbdoibcacogknkjleclhnjdmfh/content/communication_helpers.js"></script><script src="chrome-extension://infdcenbdoibcacogknkjleclhnjdmfh/content/core_helpers.js"></script>
         <meta charset="utf-8">
